@@ -18,4 +18,4 @@ var countBitsSample2 = function(n) {
     return n.toString(2).replace(/0/g,'').length;
   };
 
-console.log(countBitsSample2(1234))
+console.log(countBitsSample2(12345))
