@@ -5,14 +5,16 @@ var i = partitionOn(isEven, items);
 // Test.assertSimilar( items.slice(0, i), [1, 3, 5] );
 // Test.assertSimilar( items.slice(i),    [2, 4, 6] );
 
+//! this function will mutable second parameter (array below 'items' will change)
 function partitionOn(pred, items) {
     let arrF = [];
     let arrT = []
     items.forEach(element => {
         pred(element) ? arrT.push(element) : arrF.push(element);
     });
-    items.splice(0)
-    items.push(...arrF)
+    //functions of array are mutable 
+    items.splice(0) 
+    items.push(...arrF) 
     items.push(...arrT)
     return arrF.length;    
 }
